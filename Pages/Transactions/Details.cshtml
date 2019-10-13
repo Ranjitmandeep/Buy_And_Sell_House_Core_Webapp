@@ -1,0 +1,58 @@
+﻿@page
+@model Buy_And_Sell_House_Core_Webapp.Pages.Shared.Transactions.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <h2>Transaction Details</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Transaction.TransactionId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model =>model.Transaction.TransactionId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Transaction.Buyer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Transaction.Buyer.BuyerName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Transaction.House)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Transaction.House.HouseAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transaction.House.HousePrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Transaction.House.HousePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transaction.House.Seller)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Transaction.House.Seller.SellerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transaction.House.Seller.SellerPhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Transaction.House.Seller.SellerPhoneNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary"  asp-page="./Edit" asp-route-id="@Model.Transaction.TransactionId">Update</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,37 @@
+﻿@page
+@model Buy_And_Sell_House_Core_Webapp.Pages.Shared.Transactions.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Add Transaction</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Transaction.BuyerId" class="control-label"></label>
+                <select asp-for="Transaction.BuyerId" class ="form-control" asp-items="ViewBag.BuyerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transaction.HouseId" class="control-label"></label>
+                <select asp-for="Transaction.HouseId" class ="form-control" asp-items="ViewBag.HouseId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

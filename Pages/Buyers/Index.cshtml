@@ -1,0 +1,42 @@
+﻿@page
+@model Buy_And_Sell_House_Core_Webapp.Pages.Shared.Buyers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Buyers</h2>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Add New Buyer</a>
+</p>
+<table class="table table-striped table-primary table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyer[0].BuyerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyer[0].BuyerPhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Buyer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuyerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuyerPhoneNumber)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.Id">Update</a> |
+                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@item.Id">View</a> |
+                <a class="btn btn-primary" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
